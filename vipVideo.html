@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>VIP视频解析网 - 免费视频解析在线观看</title>
+	<meta name="keywords" content="VIP视频解析网,vip视频在线解析,vip解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析">
+	<meta name="description" content="本站提供vip视频在线免费解析，vip视频解析，优酷vip解析，爱奇艺vip解析，腾讯vip解析，乐视vip解析，芒果vip解析服务！">
+	<link rel="shortcut icon" href="favicon.ico">
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css" rel="stylesheet">
+	<link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    body {
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	}
+	.navbar {
+	  margin-bottom: 20px;
+	}
+	.alert {
+	    border-radius: 0 0 6px 6px;
+	    background-color: #f0f9eb;
+	    padding: 20px;
+	    text-align: center;
+	    font-size: 14px;
+	    color: #67c23a;
+	}
+	@media screen and (max-width:768px) {
+		.embed-responsive{
+			height: 200px!important;
+		}
+	}
+  </style>
+  </head>
+  
+  <body>
+  	<div class="container">
+	    <nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+				<a class="navbar-brand" href="/">VIP视频解析网</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://music.zhuolin.wang/" target="_blank">音乐解析</a></li>
+					<li><a href="http://www.xueshengke.cn/" target="_blank">领券购物</a></li>
+				</ul>
+			</div>
+			</div>
+		</nav>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-default" id="select" tabindex="-1">接口一
+								</button>
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+									<span class="caret"></span>
+									<span class="sr-only">切换下拉菜单</span>
+								</button>
+								<ul class="dropdown-menu">
+									<li class="active"><a href="#" id="https://www.968790.com/?url=">接口一 </a></li>
+									<li><a href="#" id="https://video.66parse.club/player/public/?url=">接口二 </a></li>
+								</ul>
+							</div><!-- /btn-group -->
+							<input type="search" id="link" name="url" class="form-control" placeholder="输入视频播放地址，如：http://v.youku.com/v_show/id_xxxx">
+							<span class="input-group-btn">
+								<button class="btn btn-default" id="play" type="button">
+									立即播放
+								</button>
+							</span>
+						</div><!-- /input-group -->
+					</div><!-- /.col-lg-6 -->
+				</div>
+		    </div>
+			<div class="panel-body">
+				<div class="embed-responsive" style="height:500px;background-color: #ecf5ff;">
+				  <iframe id="video" class="embed-responsive-item" style="display:none;" allowfullscreen="true" frameborder="0" src=""></iframe>
+				</div>
+				<div class="alert">
+				    免费视频解析接口：https://www.968790.com/?url=  源于互联网，仅供学习交流，请勿用于商业。
+				</div>
+			</div>
+			<p class="text-center" id="hitokoto"></p>
+		</div>
+		<div class="row" >
+		    <div class="col-sm-3 col-md-4">
+		        <a href="https://film.qq.com/" target="_blank" class="thumbnail">
+		            <img src="./static/images/qqlogo.png">
+		        </a>
+		    </div>
+		    <div class="col-sm-3 col-md-4">
+		        <a href="http://vip.iqiyi.com/" target="_blank" class="thumbnail">
+		            <img src="./static/images/iqiyi.png">
+		        </a>
+		    </div>
+		    <div class="col-sm-3 col-md-4">
+		        <a href="https://vip.youku.com/vips/index.html" target="_blank" class="thumbnail">
+		            <img src="./static/images/youkulogo.png">
+		        </a>
+		    </div>
+		    <div class="col-sm-3 col-md-4">
+		        <a href="https://www.mgtv.com/vip/" target="_blank" class="thumbnail">
+		            <img src="./static/images/hunantvlogo.png">
+		        </a>
+		    </div>
+			<div class="col-sm-3 col-md-4">
+		        <a href="https://www.bilibili.com/" target="_blank" class="thumbnail">
+		            <img src="./static/images/bilibili.jpg">
+		        </a>
+		    </div>
+			<div class="col-sm-3 col-md-4">
+		        <a href="http://www.yinyuetai.com/" target="_blank" class="thumbnail">
+		            <img src="./static/images/yinyuetailogo.png">
+		        </a>
+		    </div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<p class="text-center">本站仅提供视频解析服务，并不提供任何影视资源，不收集用户信息。</p>
+			<p class="text-center">若本站服务侵犯到贵司权利，请联系下方邮箱,我们会及时处理和回复。</p>
+			<p class="text-center">管理员邮箱：mail#xiaolin.pw  <a href="http://beian.miit.gov.cn">晋ICP备17008548号</a> </p>
+			<p class="text-center">Copyright © 2020  VIP视频解析网 版权所有</p>
+			<p style="display:none;">
+				<script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278622160&web_id=1278622160"></script>
+			</p>
+		</div>
+    </footer>
+    
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.layuicdn.com/layer-v3.0.3/layer.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script>
+    	// layer.open({
+	    //   type: 1,
+	    //   title: '站长参加活动，急需三连！',//先领券 再购物
+	    //   closeBtn: false,
+	    //   area: '300px',
+	    //   //id: 'LAY_Notice_aliyun', //设定一个id，防止重复弹出
+	    //   btn: ['我要支持', '等会再说'],
+	    //   btnAlign: 'c',
+	    //   moveType: 1, //拖拽模式，0或者1
+	    //   resize: false,
+	    //   content: ['<div style="line-height: 36px; padding: 15px; text-align: center;">',
+	    //     '<p>如果你也玩<strong style="color: #FF0036;">B站</strong> 麻烦帮忙点个<strong style="color: #FF0036;">三连</strong></p>',//
+	    //     '<p style="color: #999;">万分感谢!!!</p>',
+	    //   '</div>'].join(''),
+	    //   success: function(layero, index){
+	    //     var btn = layero.find('.layui-layer-btn');
+	    //     btn.find('.layui-layer-btn0').attr({
+	    //       id:'ad-xueshengke',
+	    //       href: 'https://www.bilibili.com/video/BV1Le411s7JW',//
+	    //       target: '_blank',
+ 	   //       onclick: "_czc.push(['_trackEvent', 'bilibili', '点击', 'bilibili', 1, 'ad-xueshengke']);"
+	    //     });
+	    //   },
+	    //   //end: function(){
+	    //   //  layui.data('layui', {
+	    //   //    key: 'notice_aliyun',
+	    //   //    value: new Date().getTime()
+	    //   //  });
+	    //   //},
+	    //   btn2: function(){
+	    //     layer.tips('别忘了看看', '#layer-spm-event-aliyun', {
+	    //       tips: [3, '#FF0036']
+	    //     });
+	    //   }
+	    // });
+	    
+    	layer.open({
+	      type: 1,
+	      title: '购物不领券,白花冤枉钱！',//先领券 再购物
+	      closeBtn: false,
+	      area: '300px',
+	      //id: 'LAY_Notice_aliyun', //设定一个id，防止重复弹出
+	      btn: ['戳这里领', '等会再说'],
+	      btnAlign: 'c',
+	      moveType: 1, //拖拽模式，0或者1
+	      resize: false,
+	      content: ['<div style="line-height: 36px; padding: 15px; text-align: center;">',
+	        '<p><strong style="color: #FF0036;">内部优惠券</strong>超值好物一网打尽</p>',//
+	        '<p style="color: #999;">快来抢购!!!</p>',
+	      '</div>'].join(''),
+	      success: function(layero, index){
+	        var btn = layero.find('.layui-layer-btn');
+	        btn.find('.layui-layer-btn0').attr({
+	          id:'ad-xueshengke',
+	          href: 'http://www.xueshengke.cn',//
+	          target: '_blank',
+	          onclick: "_czc.push(['_trackEvent', '广告', '点击', '学生客', 1, 'ad-xueshengke']);"
+	        });
+	      },
+	      //end: function(){
+	      //  layui.data('layui', {
+	      //    key: 'notice_aliyun',
+	      //    value: new Date().getTime()
+	      //  });
+	      //},
+	      btn2: function(){
+	        layer.tips('别忘了看看', '#layer-spm-event-aliyun', {
+	          tips: [3, '#FF0036']
+	        });
+	      }
+	    });
+	    $(".dropdown-menu li").click(function(){
+	    	$("li").removeClass("active");
+			$(this).addClass("active");
+			$("#select").html($(this).find('a').html());
+		});
+		$("#play").click(function(){
+			var link = $("#link").val();
+			var RegExp = /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/;
+			if (RegExp.test(link) == false)
+			{
+				$.alert({
+					title: '提示',
+					content: '您输入的链接格式不正确，请重新输入'
+				});
+				return;
+			}
+			var jiekou = $("ul .active").find("a").attr("id");
+			if(jiekou == null || jiekou == ''){
+				jiekou = 'https://www.968790.com/?url=';
+			}
+			var url = jiekou + link;
+			$("head").append('<meta name="referrer" content="no-referrer">');
+	    	$("#video").attr("src",url).show();
+		});
+    
+    </script>
+  </body>
+</html>
