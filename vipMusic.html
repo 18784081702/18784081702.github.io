@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="renderer" content="webkit">
-    <meta name="author" content="mengkun">
+    <meta name="author" content="haifeng">
     <meta name="generator" content="KodCloud">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     
@@ -71,7 +71,7 @@
                 <span class="btn" data-action="sheet" title="音乐播放列表">播放列表</span>
                 <span class="btn" data-action="search" title="点击搜索音乐">歌曲搜索</span>
                 <span class="btn ewm"  title="扫描赞助站长">赞助站长</span>
-               <a target="_blank" href="https://rushyhf.github.io/vipVideo.html"><span class="btn"  title="视频解析">视频解析</span></a>
+               <a target="_blank" href="http://video.zhuolin.wang/"><span class="btn"  title="视频解析">视频解析</span></a>
                 <a target="_blank" href="http://www.xueshengke.cn/"><span class="btn"  title="购物省钱必备">内部优惠券</span></a>
             </div>
         </div>  <!--class="btn-bar"-->
@@ -143,7 +143,7 @@
 <script src="https://music.zhuolin.wang/js/musicList.js"></script>
 
 <!-- 封装函数及ui交互模块 -->
-<script src="../js/aa.js"></script>
+<script src="file:///C:/Users/yhf/Desktop/aa.js"></script>
 
 <!-- 播放器主体功能模块 -->
 <script src="https://music.zhuolin.wang/js/player.js"></script>
@@ -155,6 +155,51 @@
 <script src="https://music.zhuolin.wang/js/background-blur.min.js"></script>
 
 
+<!-- 站长统计代码 
+ <span style="display: none">
+<script type="text/javascript">
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cspan id='cnzz_stat_icon_1260050386'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260050386' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+//声明_czc对象:
+var _czc = _czc || [];
+//绑定siteid，请用您的siteid替换下方"XXXXXXXX"部分
+_czc.push(["_setAccount", "1260050386"]);
+</script>
+</span>
+    <!-- 各类统计代码都放在这里…… 
 
+  <script type="text/javascript">
+
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+                    "SymbianOS", "Windows Phone",
+                    "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    };
+    $(document).ready(function(){
+        var isPC=IsPC();
+        if(isPC){
+            xskBox();
+           //这里执行的是PC端的代码；
+      }
+        else{
+           //这里执行的是移动端的代码；
+           xskBox();
+        }
+    });
+    </script>
+    
+</span>
+-->
 </body>
 </html>
